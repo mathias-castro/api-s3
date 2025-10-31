@@ -5,7 +5,7 @@ provider:
   name: aws
   runtime: python3.13	
   # Default memory size for functions (default: 256MB)
-  memorySize: 256
+  memorySize: 1024
   timeout: 20
   iam:
     role: arn:aws:iam::016748221635:role/LabRole
@@ -13,7 +13,7 @@ provider:
 functions:
   lista_buckets:
     handler: lista_buckets.lambda_handler
-    memorySize: 1024
+    memorySize: 512
     events:
       - http:
           path: /s3/lista-buckets
